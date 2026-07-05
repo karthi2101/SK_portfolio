@@ -1,0 +1,24 @@
+Create a high-fidelity, interactive 3D portfolio landing page concept for a Senior SDET / QA Automation Engineer named Karthick Srinivasan based on the file "Karthick_Srinivasan_Resume (3).pdf".
+
+The aesthetic must be soft neo-minimalism combined with architectural precision. Use a sophisticated color palette of warm alabaster white, muted sand, deep charcoal text, and soft sage green accents. The entire page feels like a sunlit, architectural art gallery.
+
+The 3D space features a monolithic, multi-layered stone structure. As the user scrolls, the camera smoothly pans to different carved, interactive alcoves:
+
+1. STRUCTURE 01: THE FOUNDATION (Hero & Impact Metrics)
+A clean, minimal typography block displaying "KARTHICK SRINIVASAN | SDET". Carved directly into a smooth concrete surface are three massive, understated numbers acting as floating sculptures: "3+ Years", "60% Regression Saved", and "95% Coverage".
+
+2. STRUCTURE 02: THE PIPELINE (Core Expertise)
+An abstract, kinetic 3D glass pipe sculpture representing CI/CD fluid movement. Inside floating glass blocks are clean, flat-designed icons for Playwright, Selenium, Jenkins, Docker, and Microsoft Azure. The architecture shifts smoothly when hovering over "Automation", "DevOps", or "Data".
+
+3. STRUCTURE 03: THE RECORD (Professional Journey)
+A beautifully organized vertical stone staircase. Each step represents a career milestone. 
+- Top Step: "Accenture | Quality Engineering Analyst (Aug 2024 - Present)" displaying metrics like saving 60% manual effort (from 3 days to 5 hours) and managing 250+ automated test cases.
+- Second Step: "Atos Syntel | Associate Consultant" detailing the building of a modular Page Object Model framework from scratch.
+
+4. STRUCTURE 04: THE CREDENTIALS (Certifications & Education)
+A gallery wall of minimalist, framed translucent glass panes representing his B.E. in Computer Science (8.4 CGPA) and his 5 premium certifications, including GitHub Copilot and Google Generative AI Leader.
+
+5. STRUCTURE 05: THE ARCH (Contact)
+A grand, calming archway framing a simple, elegant contact form with glassmorphic buttons for LinkedIn, WhatsApp, and Email, labeled: "Available for technical collaboration."
+
+Overall Style: Ultra-clean, premium editorial design, smooth physics-based camera transitions, soft cinematic shadows, and sharp, elegant typography.
