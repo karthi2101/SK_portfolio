@@ -38,7 +38,7 @@ jobs:
         run: pnpm --filter @workspace/portfolio run build
         env:
           PORT: "3000"
-          BASE_PATH: "/"
+          BASE_PATH: "/SK_portfolio/"
           NODE_ENV: production
 
       - name: Upload Pages artifact
