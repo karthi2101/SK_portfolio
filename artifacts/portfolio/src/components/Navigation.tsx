@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 export function Navigation() {
@@ -10,31 +10,28 @@ export function Navigation() {
   });
 
   const links = [
-    { label: "Foundation", href: "#foundation" },
-    { label: "Pipeline", href: "#pipeline" },
-    { label: "Record", href: "#record" },
+    { label: "Hero", href: "#foundation" },
+    { label: "Skills", href: "#pipeline" },
+    { label: "Experience", href: "#record" },
     { label: "Credentials", href: "#credentials" },
-    { label: "Arch", href: "#arch" },
+    { label: "Contact", href: "#arch" },
   ];
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled ? "bg-background/70 backdrop-blur-md border-b border-border" : "bg-transparent"
-      }`}
-      initial={{ y: -100 }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      style={{
+        background: scrolled ? "rgba(12,12,12,0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+      }}
+      initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#foundation" className="text-2xl font-serif tracking-tighter text-foreground group relative">
-          <span className="relative z-10">KS</span>
-          <motion.div
-            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary origin-left"
-            initial={{ scaleX: 0 }}
-            whileHover={{ scaleX: 1 }}
-            transition={{ duration: 0.3 }}
-          />
+      <div className="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between py-5">
+        <a href="#foundation" className="font-sans font-black text-xl text-foreground tracking-tight hover:text-primary transition-colors">
+          KS
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -42,7 +39,7 @@ export function Navigation() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors"
+              className="text-xs font-semibold tracking-[0.12em] uppercase text-foreground/50 hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </a>

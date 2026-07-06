@@ -1,75 +1,90 @@
 import { motion } from "framer-motion";
 import { HeroCanvas } from "./HeroCanvas";
 
+const metrics = [
+  { value: "4+", label: "Years Experience" },
+  { value: "60%", label: "Regression Time Saved" },
+  { value: "95%", label: "Test Coverage" },
+];
+
 export function HeroSection() {
   return (
-    <section id="foundation" className="relative min-h-[100dvh] flex items-center overflow-hidden pt-20">
+    <section
+      id="foundation"
+      style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", overflow: "hidden", paddingTop: "5rem", paddingBottom: "4rem", background: "#111111" }}
+    >
       <HeroCanvas />
-      
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-4"
-          >
-            <span className="text-primary font-medium tracking-[0.2em] text-xs uppercase">
-            </span>
-            
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9] text-foreground">
-              KARTHICK<br />SRINIVASAN
-            </h1>
-            
-            <p className="text-primary tracking-widest uppercase text-sm font-medium mt-4">
-              SDET | QA Automation Engineer
-            </p>
 
-            <p className="text-foreground/50 text-sm md:text-base leading-relaxed max-w-xl mt-6 font-sans font-light">
-              3.8 years engineering scalable automation frameworks across enterprise applications —
-              bridging traditional QA with cloud &amp; AI innovation as a certified Google Cloud
-              and Microsoft Azure professional.
-            </p>
-          </motion.div>
+      {/* Red radial glow */}
+      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: "800px", height: "500px", background: "radial-gradient(ellipse at center, rgba(232,64,64,0.1) 0%, transparent 65%)", pointerEvents: "none" }} />
 
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="border-l border-primary/30 pl-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
-              <div className="text-4xl md:text-5xl font-serif text-foreground/20 font-light tracking-tighter mb-2">4+</div>
-              <div className="text-xs uppercase tracking-widest text-foreground/60">Years Experience</div>
-            </div>
-            
-            <div className="border-l border-primary/30 pl-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
-              <div className="text-4xl md:text-5xl font-serif text-foreground/20 font-light tracking-tighter mb-2">60%</div>
-              <div className="text-xs uppercase tracking-widest text-foreground/60">Regression Saved</div>
-            </div>
-            
-            <div className="border-l border-primary/30 pl-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
-              <div className="text-4xl md:text-5xl font-serif text-foreground/20 font-light tracking-tighter mb-2">95%+</div>
-              <div className="text-xs uppercase tracking-widest text-foreground/60">Test Coverage</div>
-            </div>
-          </motion.div>
-        </div>
+      <div style={{ position: "relative", zIndex: 10, width: "100%", maxWidth: "960px", margin: "0 auto", padding: "0 1.5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+
+        <motion.h1
+          style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif", fontWeight: 900, fontSize: "clamp(3.5rem, 13vw, 9.5rem)", lineHeight: 0.9, letterSpacing: "-0.02em", color: "#F2F2F2", margin: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          KARTHICK<br />SRINIVASAN
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          style={{ marginTop: "2rem" }}
+        >
+          <span style={{ display: "inline-block", background: "rgba(18,8,8,0.95)", border: "1px solid rgba(232,64,64,0.45)", borderRadius: "9999px", padding: "10px 28px", color: "#E84040", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif" }}>
+            SDET | Quality Engineering
+          </span>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{ marginTop: "1.5rem", color: "rgba(242,242,242,0.4)", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "520px", fontWeight: 300, fontFamily: "'Inter', sans-serif" }}
+        >
+          3.8 years engineering scalable automation frameworks — bridging traditional QA
+          with cloud &amp; AI innovation as a certified Google Cloud and Microsoft Azure professional.
+        </motion.p>
+
+        <motion.div
+          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.25rem", marginTop: "4rem", width: "100%", maxWidth: "720px" }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+        >
+          {metrics.map((m, i) => (
+            <motion.div
+              key={i}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: "2.5rem", paddingBottom: "2.5rem", borderRadius: "1rem", background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 4px 30px rgba(0,0,0,0.5)", cursor: "default" }}
+              whileHover={{ y: -6, boxShadow: "0 20px 50px rgba(232,64,64,0.2), 0 4px 20px rgba(0,0,0,0.5)", borderColor: "rgba(232,64,64,0.35)" }}
+              transition={{ duration: 0.25 }}
+            >
+              <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "clamp(2.2rem,4.5vw,3.5rem)", color: "#E84040", lineHeight: 1, marginBottom: "0.75rem" }}>
+                {m.value}
+              </div>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(242,242,242,0.4)", textAlign: "center" }}>
+                {m.label}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      <motion.div
+        style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
+        transition={{ delay: 1.4, duration: 1 }}
       >
-        <span className="text-[10px] uppercase tracking-widest text-foreground/40"></span>
-        <motion.div 
-          className="w-[1px] h-12 bg-gradient-to-b from-primary/60 to-transparent"
-          animate={{ scaleY: [0, 1, 0], transformOrigin: ["top", "top", "bottom"] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        <span style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(242,242,242,0.2)" }}>Scroll</span>
+        <motion.div
+          style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, #E84040, transparent)" }}
+          animate={{ scaleY: [0, 1, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", transformOrigin: "top" }}
         />
       </motion.div>
     </section>

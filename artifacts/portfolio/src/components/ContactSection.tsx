@@ -1,72 +1,120 @@
 import { motion } from "framer-motion";
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Mail, MessageCircle, ArrowRight } from "lucide-react";
+
+const contacts = [
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "Karthick Srinivasan",
+    href: "https://linkedin.com/in/karthick-srinivasan-068b011a1",
+    bg: "#C0392B",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "karthicksri2001@gmail.com",
+    href: "mailto:karthicksri2001@gmail.com",
+    bg: "#C0392B",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "+91 9488733282",
+    href: "https://wa.me/919488733282",
+    bg: "#C0392B",
+  },
+];
 
 export function ContactSection() {
   return (
-    <section id="arch" className="relative bg-[#1C1C1C] text-white py-32 min-h-[80vh] flex flex-col justify-center overflow-hidden">
-      {/* Abstract Arch Background */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[80%] pointer-events-none opacity-25">
-        <div className="w-full h-full border-t border-l border-r border-[#F5A520] rounded-t-[500px]" />
-        <div className="absolute inset-8 border-t border-l border-r border-[#E8714A] rounded-t-[500px] opacity-50" />
-      </div>
+    <section id="arch" className="relative py-28 bg-background overflow-hidden">
+      {/* Subtle radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 60% 40% at 50% 100%, rgba(232,64,64,0.07) 0%, transparent 70%)",
+        }}
+      />
 
-      <div className="max-w-5xl mx-auto px-6 w-full relative z-10 text-center">
+      <div className="max-w-2xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mb-12 text-center"
         >
-          <span className="text-[#F5A520] font-medium tracking-[0.2em] text-xs uppercase mb-4 block">
-            Structure 05 / The Arch
-          </span>
-          <h2 className="font-serif text-5xl md:text-7xl text-[#F5F2EE] mb-6">
-            Available for Technical<br />Collaboration
+          <h2
+            className="font-sans font-black text-foreground leading-tight"
+            style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
+          >
+            LET'S COLLABORATE
           </h2>
-          <p className="text-[#E8E0D5]/70 tracking-widest uppercase text-sm font-medium">
-            SDET · Chennai, India · Open to Test Automation, SDET &amp; QA Engineering roles
+          <p className="text-foreground/45 text-sm md:text-base mt-4 font-light">
+            Available for technical collaboration and QA automation excellence
+          </p>
+          <p className="text-foreground/30 text-xs mt-2 uppercase tracking-widest font-medium">
+            Open to Test Automation · SDET · QA Engineering roles
           </p>
         </motion.div>
 
-        <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-6 mb-32"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <div className="space-y-4">
+          {contacts.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <motion.a
+                key={i}
+                href={c.href}
+                target={c.href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center gap-5 rounded-2xl px-6 py-5 group"
+                style={{
+                  background: "#141414",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.35)",
+                  textDecoration: "none",
+                }}
+                whileHover={{
+                  borderColor: "rgba(232,64,64,0.4)",
+                  boxShadow: "0 8px 32px rgba(232,64,64,0.15), 0 4px 16px rgba(0,0,0,0.4)",
+                }}
+                transition={{ duration: 0.25 }}
+              >
+                {/* Icon circle */}
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
+                  style={{ background: c.bg }}
+                >
+                  <Icon className="w-5 h-5 text-white" strokeWidth={2} />
+                </div>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/40 font-medium mb-0.5">
+                    {c.label}
+                  </p>
+                  <p className="text-foreground/90 font-semibold text-sm truncate">{c.value}</p>
+                </div>
+
+                {/* Arrow */}
+                <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+              </motion.a>
+            );
+          })}
+        </div>
+
+        <motion.p
+          className="text-center text-foreground/20 text-xs tracking-widest uppercase mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.5 }}
         >
-          <a
-            href="https://linkedin.com/in/karthick-srinivasan-068b011a1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full backdrop-blur-md transition-all duration-300 hover:border-[#F5A520] hover:shadow-[0_0_20px_rgba(245,165,32,0.25)] group"
-          >
-            <Linkedin className="w-5 h-5 text-[#E8E0D5] group-hover:text-[#F5A520] transition-colors" />
-            <span className="text-sm font-medium tracking-wide">LinkedIn</span>
-          </a>
-          
-          <a
-            href="mailto:karthicksri2001@gmail.com"
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full backdrop-blur-md transition-all duration-300 hover:border-[#F5A520] hover:shadow-[0_0_20px_rgba(245,165,32,0.25)] group"
-          >
-            <Mail className="w-5 h-5 text-[#E8E0D5] group-hover:text-[#F5A520] transition-colors" />
-            <span className="text-sm font-medium tracking-wide">Email</span>
-          </a>
-
-          <a
-            href="https://wa.me/919488733282"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full backdrop-blur-md transition-all duration-300 hover:border-[#E8714A] hover:shadow-[0_0_20px_rgba(232,113,74,0.25)] group"
-          >
-            <MessageCircle className="w-5 h-5 text-[#E8E0D5] group-hover:text-[#E8714A] transition-colors" />
-            <span className="text-sm font-medium tracking-wide">WhatsApp</span>
-          </a>
-        </motion.div>
-      </div>
-
-      <div className="absolute bottom-8 w-full text-center text-[#E8E0D5]/40 text-xs tracking-widest uppercase">
-        © 2025 Karthick Srinivasan · SDET · QA Automation Engineer
+          © 2025 Karthick Srinivasan · SDET · QA Automation Engineer
+        </motion.p>
       </div>
     </section>
   );

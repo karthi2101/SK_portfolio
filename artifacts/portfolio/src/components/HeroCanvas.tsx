@@ -3,122 +3,92 @@ import { motion } from "framer-motion";
 export function HeroCanvas() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      {/* Large horizontal slab - amber/gold */}
+      {/* Top horizontal bar - red tint */}
       <motion.div
         className="absolute rounded-sm"
         style={{
-          width: "55%",
-          height: "18px",
-          background: "linear-gradient(135deg, #C47F10 0%, #F5A520 60%, #E8912A 100%)",
-          top: "22%",
-          left: "-8%",
-          transformOrigin: "left center",
-          boxShadow: "0 8px 40px rgba(245,165,32,0.20)",
-          opacity: 0.45,
+          width: "50%",
+          height: "2px",
+          background: "linear-gradient(90deg, transparent 0%, rgba(232,64,64,0.4) 40%, rgba(232,64,64,0.15) 100%)",
+          top: "18%",
+          left: "-5%",
         }}
-        animate={{
-          y: [0, -12, 0],
-          rotateZ: [-1.2, 1.2, -1.2],
-          opacity: [0.55, 0.45, 0.55],
-        }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ x: [0, 30, 0], opacity: [0.6, 0.3, 0.6] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Tall vertical slab - coral */}
-      <motion.div
-        className="absolute rounded-sm"
-        style={{
-          width: "14px",
-          height: "42%",
-          background: "linear-gradient(180deg, #C04A2A 0%, #E8714A 50%, #D05A38 100%)",
-          top: "15%",
-          right: "18%",
-          boxShadow: "0 12px 50px rgba(232,113,74,0.25)",
-          opacity: 0.35,
-        }}
-        animate={{
-          y: [0, 16, 0],
-          rotateZ: [0.5, -0.5, 0.5],
-          opacity: [0.35, 0.28, 0.35],
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-      />
-
-      {/* Wide thin slab - amber lower */}
-      <motion.div
-        className="absolute rounded-sm"
-        style={{
-          width: "70%",
-          height: "10px",
-          background: "linear-gradient(90deg, transparent 0%, #C47F10 20%, #F5A520 60%, #E8912A 85%, transparent 100%)",
-          bottom: "28%",
-          right: "-10%",
-          opacity: 0.25,
-          boxShadow: "0 4px 24px rgba(245,165,32,0.15)",
-        }}
-        animate={{
-          y: [0, 8, 0],
-          x: [0, -10, 0],
-          opacity: [0.4, 0.3, 0.4],
-        }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-      />
-
-      {/* Small square block - coral accent */}
-      <motion.div
-        className="absolute rounded-sm"
-        style={{
-          width: "80px",
-          height: "80px",
-          background: "linear-gradient(135deg, #E8714A 0%, #C04A2A 100%)",
-          top: "60%",
-          left: "10%",
-          opacity: 0.18,
-          boxShadow: "0 8px 30px rgba(232,113,74,0.25)",
-          transform: "rotate(15deg)",
-        }}
-        animate={{
-          y: [0, -20, 0],
-          rotateZ: [15, 25, 15],
-          opacity: [0.12, 0.08, 0.12],
-        }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-
-      {/* Thin diagonal accent line */}
+      {/* Right vertical accent */}
       <motion.div
         className="absolute"
         style={{
-          width: "2px",
+          width: "1px",
           height: "30%",
-          background: "linear-gradient(180deg, transparent 0%, #F5A520 50%, transparent 100%)",
-          top: "30%",
-          right: "32%",
-          opacity: 0.3,
-          transform: "rotate(12deg)",
+          background: "linear-gradient(180deg, transparent, rgba(232,64,64,0.35), transparent)",
+          top: "20%",
+          right: "20%",
         }}
-        animate={{
-          opacity: [0.25, 0.15, 0.25],
-          scaleY: [1, 0.85, 1],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        animate={{ y: [0, 20, 0], opacity: [0.5, 0.2, 0.5] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      {/* Large background glow - amber */}
+      {/* Floating square — top right */}
       <motion.div
-        className="absolute rounded-sm"
+        className="absolute rounded-lg"
         style={{
-          width: "45%",
-          height: "45%",
-          background: "radial-gradient(ellipse at center, #F5A520 0%, transparent 70%)",
-          top: "5%",
-          right: "-5%",
-          opacity: 0.08,
+          width: "120px",
+          height: "120px",
+          border: "1px solid rgba(232,64,64,0.15)",
+          top: "12%",
+          right: "10%",
+          transform: "rotate(20deg)",
         }}
-        animate={{
-          opacity: [0.18, 0.12, 0.18],
-          scale: [1, 1.05, 1],
+        animate={{ rotate: [20, 32, 20], opacity: [0.5, 0.25, 0.5] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Small square — bottom left */}
+      <motion.div
+        className="absolute rounded-md"
+        style={{
+          width: "64px",
+          height: "64px",
+          background: "rgba(232,64,64,0.07)",
+          border: "1px solid rgba(232,64,64,0.2)",
+          bottom: "22%",
+          left: "8%",
+          transform: "rotate(-12deg)",
         }}
+        animate={{ rotate: [-12, -24, -12], y: [0, -16, 0], opacity: [0.6, 0.3, 0.6] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
+      {/* Bottom wide line */}
+      <motion.div
+        className="absolute"
+        style={{
+          width: "40%",
+          height: "1px",
+          background: "linear-gradient(90deg, transparent, rgba(232,64,64,0.2), transparent)",
+          bottom: "30%",
+          right: "0%",
+        }}
+        animate={{ opacity: [0.5, 0.15, 0.5], scaleX: [1, 0.8, 1] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      />
+
+      {/* Large circle outline */}
+      <motion.div
+        className="absolute rounded-full"
+        style={{
+          width: "500px",
+          height: "500px",
+          border: "1px solid rgba(232,64,64,0.06)",
+          top: "50%",
+          left: "50%",
+          marginTop: "-250px",
+          marginLeft: "-250px",
+        }}
+        animate={{ scale: [1, 1.04, 1], opacity: [0.5, 0.25, 0.5] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
     </div>
