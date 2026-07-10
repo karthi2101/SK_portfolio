@@ -46,8 +46,16 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           style={{ marginTop: "1.5rem", color: "rgba(242,242,242,0.4)", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "520px", fontWeight: 300, fontFamily: "'Inter', sans-serif" }}
         >
-          3.8 years engineering scalable automation frameworks — bridging traditional QA
-          with cloud &amp; AI innovation as a certified Google Cloud and Microsoft Azure professional.
+          Quality Engineer with 3.8 years of experience in test automation and
+          functional/regression testing across enterprise applications. Skilled in building
+          and maintaining automated test suites using Selenium with Java, validating APIs
+          with Postman, and writing SQL queries to verify data integrity at the database level.
+          Experienced working in Agile teams using JIRA and Azure DevOps for test planning,
+          defect tracking, and release management.
+          <br /><br />
+          Google Cloud Certified Generative AI Leader and Cloud Digital Leader, with
+          Microsoft Azure Fundamentals certification — actively exploring how AI and cloud
+          platforms intersect with modern QA practices.
         </motion.p>
 
         <motion.div
