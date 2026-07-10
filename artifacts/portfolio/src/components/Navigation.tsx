@@ -10,7 +10,7 @@ export function Navigation() {
   });
 
   const links = [
-    { label: "Hero", href: "#foundation" },
+    { label: "About", href: "#foundation" },
     { label: "Skills", href: "#pipeline" },
     { label: "Experience", href: "#record" },
     { label: "Credentials", href: "#credentials" },
