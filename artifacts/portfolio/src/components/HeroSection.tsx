@@ -44,9 +44,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          style={{ marginTop: "1.5rem", color: "rgba(242,242,242,0.4)", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "520px", fontWeight: 300, fontFamily: "'Inter', sans-serif" }}
+          style={{ marginTop: "1.5rem", color: "rgba(242,242,242,0.4)", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "520px", textAlign: "justify", textAlignLast: "center", fontWeight: 300, fontFamily: "'Inter', sans-serif" }}
         >
-          Quality Engineer with 3.8 years of experience in test automation and
+          Quality Engineer with 3+ years of experience in test automation and
           functional/regression testing across enterprise applications. Skilled in building
           and maintaining automated test suites using Selenium with Java, validating APIs
           with Postman, and writing SQL queries to verify data integrity at the database level.
